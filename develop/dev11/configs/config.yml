@@ -1,0 +1,9 @@
+port: "8000"
+
+db:
+  username: "dev11"
+  password: "dev11"
+  host: "localhost"
+  port: "5432"
+  dbname:   "my_db"
+  sslmode:  "disable"

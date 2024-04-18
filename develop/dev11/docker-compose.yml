@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: my_db
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: dev11
+      POSTGRES_PASSWORD: dev11
+      POSTGRES_DB: my_db
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: swetlana.grineva2015@yandex.ru
+      PGADMIN_DEFAULT_PASSWORD: root
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5050:80"
